@@ -1,0 +1,38 @@
+ngx-dropzone {
+  display: inherit;
+  align-items: inherit;
+  height: initial;
+  background: inherit;
+  cursor: inherit;
+  color: inherit;
+  border: initial;
+  border-radius: initial;
+  font-size: inherit;
+
+  width: 100%;
+  height: 100%;
+
+  &.ngx-dz-hovered {
+    border-style: initial;
+  }
+}
+
+.centered {
+  padding-inline: 1rem;
+}
+
+// unstyle a href
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

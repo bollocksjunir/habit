@@ -1,0 +1,20 @@
+mat-table {
+  width: 100%;
+}
+
+.mat-column-actions {
+  justify-content: end;
+  flex-grow: 0.5;
+}
+
+.mat-column-key {
+  flex-grow: 2;
+}
+
+.mat-column-last_used {
+  flex-grow: 0.5;
+}
+
+.icon-red {
+  color: #f44336;
+}

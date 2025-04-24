@@ -1,0 +1,66 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.svg-logo {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 48px;
+    width: 48px;
+    border-radius: 20%;
+  }
+}
+
+.svg-logo-text {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 32px;
+  }
+}
+
+.menu-username {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+mat-toolbar {
+  height: 64px;
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+
+  box-shadow:
+    0px 2px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.loading-bar {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+}

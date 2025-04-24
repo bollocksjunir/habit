@@ -1,0 +1,60 @@
+<div *ngIf="available > 0">
+  <h1>Create a ShareX target config</h1>
+
+  <p>
+    Please select an api key to associate with the ShareX target, and then the
+    preferred file format you'd like when sharing.
+  </p>
+
+  <div class="row">
+    <mat-form-field class="col-12 col-md-6 col-xl-4" appearance="outline">
+      <mat-label>Api Key</mat-label>
+      <mat-select
+        msInfiniteScroll
+        (selectionChange)="onSelectionChange($event)"
+        (infiniteScroll)="getNextBatch()"
+        [complete]="loaded === available"
+      >
+        <mat-option *ngFor="let key of apikeys$ | async" [value]="key.key">{{
+          key.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-md-3 col-xl-2" appearance="outline">
+      <mat-label>Image Format</mat-label>
+      <mat-select [(value)]="selectedFormat">
+        <mat-option *ngFor="let format of formatOptions" [value]="format.key">
+          {{ format.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button
+        color="primary"
+        mat-raised-button
+        [disabled]="key === null"
+        (click)="onExport()"
+      >
+        Export Config
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="available === 0">
+  <h1>No API keys available</h1>
+  <p>You need to have at least one API key to create a ShareX target config.</p>
+
+  <button color="primary" mat-raised-button routerLink="/settings/apikeys">
+    Create an API key here
+  </button>
+</div>
+
+<div *ngIf="available < 0">
+  <h1>Loading</h1>
+  <mat-spinner></mat-spinner>
+</div>

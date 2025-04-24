@@ -1,0 +1,72 @@
+// Create white border around content
+.content-border {
+  border-radius: 20px;
+  height: 100%;
+
+  border-style: solid;
+  border-width: 5px;
+}
+
+// Easily center content
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.center-horizontally {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Unstyled links
+.link-unstyled {
+  &,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    text-decoration: none;
+    font-variant: inherit;
+    font-weight: bold;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
+    padding: inherit;
+    vertical-align: inherit;
+  }
+}
+
+// Anim
+
+.container,
+.row > div {
+  transition-property: max-width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.fullanimate,
+.fullanimate * {
+  transition: ease-in-out all 0.2s !important;
+}

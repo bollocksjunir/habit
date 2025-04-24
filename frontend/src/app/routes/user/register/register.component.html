@@ -1,0 +1,88 @@
+<div class="content-border padded">
+  <div class="container centered">
+    <form class="row" (ngSubmit)="onSubmit()">
+      <div class="col-12 py-2">
+        <img
+          src="/assets/branding/text/picsur_light.svg"
+          alt="Picsur Text Logo"
+        />
+      </div>
+
+      <div class="col-12 py-2">
+        <h1>Register your new account</h1>
+      </div>
+
+      <div class="col-12 py-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            type="text"
+            [formControl]="model.username"
+            name="username"
+            autocorrect="off"
+            autocapitalize="none"
+            required
+          />
+          <mat-error *ngIf="model.username.errors">
+            {{ model.usernameError }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 py-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [formControl]="model.password"
+            name="password"
+            required
+          />
+          <mat-error *ngIf="model.password.errors">
+            {{ model.passwordError }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 py-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [formControl]="model.passwordConfirm"
+            name="confirmpassword"
+            required
+          />
+          <mat-error *ngIf="model.passwordConfirm.errors">
+            {{ model.passwordConfirmError }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 py-2">
+        <button
+          *ngIf="showLogin"
+          mat-flat-button
+          color="accent"
+          class="mx-2"
+          (click)="onLogin()"
+          type="button"
+        >
+          LOGIN
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          class="mx-2"
+          type="submit"
+          [disabled]="loading"
+        >
+          {{ loading ? 'LOADING...' : 'REGISTER' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

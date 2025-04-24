@@ -1,0 +1,24 @@
+.grow-full {
+  flex-grow: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.header-spacer {
+  height: 64px;
+  margin-bottom: 32px;
+  flex-shrink: 0; // why, what, wtf flexbox
+}
+
+.sidenav-nav {
+  margin-top: 64px;
+  min-width: 10rem;
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

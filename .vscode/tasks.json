@@ -1,0 +1,69 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start full",
+      "dependsOn": [
+        "Start backend",
+        "Start frontend",
+        "Start postgres",
+        "Start shared"
+      ],
+      "dependsOrder": "parallel",
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Start shared",
+      "command": "pnpm start",
+      "options": {
+        "cwd": "${cwd}/shared",
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-i", "-c"]
+        }
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Start backend",
+      "command": "pnpm start:dev",
+      "options": {
+        "cwd": "${cwd}/backend",
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-i", "-c"]
+        }
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Start frontend",
+      "command": "pnpm watch",
+      "options": {
+        "cwd": "${cwd}/frontend",
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-i", "-c"]
+        }
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Start postgres",
+      "command": "pnpm devdb:start",
+      "options": {
+        "cwd": "${cwd}",
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-i", "-c"]
+        }
+      },
+      "group": "build"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/",
+
+    "lib": ["ES2022", "dom"]
+  },
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.d.ts", "src/app/**/*.ts", "src/app/**/*.html"],
+  "exclude": ["src/**/*.worker.ts", "src/**/*.exclude.ts"]
+}

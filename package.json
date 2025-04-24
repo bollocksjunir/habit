@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "version": "0.5.7",
+  "scripts": {
+    "devdb:start": "docker-compose -f ./support/dev.docker-compose.yml up -d",
+    "devdb:stop": "docker-compose -f ./support/dev.docker-compose.yml down",
+    "devdb:restart": "docker-compose -f ./support/dev.docker-compose.yml restart",
+    "devdb:remove": "docker-compose -f ./support/dev.docker-compose.yml down --volumes --remove-orphans",
+    "build": "./support/build.sh",
+    "setversion": "./support/setversion.sh",
+    "purge": "rm -rf ./node_modules",
+    "purge-all": "./support/purge-all.sh",
+    "format": "prettier --write .",
+    "lint": "eslint --fix ."
+  },
+  "pnpm": {
+    "overrides": {
+      "typescript": "~5.5.4"
+    }
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
+    "@typescript-eslint/parser": "^8.12.2",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-require-extensions": "^0.1.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-sh": "^0.14.0",
+    "typescript": "~5.5.4"
+  },
+  "packageManager": "pnpm@9.6.0"
+}

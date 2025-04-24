@@ -1,0 +1,57 @@
+// General styling
+html,
+body {
+  height: 100%;
+
+  color-scheme: dark;
+  .theme-alternate {
+    color-scheme: light;
+  }
+}
+
+app-root {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  box-sizing: border-box;
+  // Default font is sans family
+  font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+router-outlet ~ * {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+:not(input) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mat-icon {
+  // Yes yes, !important is here, god damn css
+  // If someone wants to properly figure out why icons are escaping their 24px box, feel free to
+  height: initial !important;
+  width: initial !important;
+}
+
+button.mat-icon-button {
+  line-height: unset;
+}
+
+.row {
+  width: 100%;
+}

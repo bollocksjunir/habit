@@ -1,0 +1,34 @@
+<mat-nav-list>
+  <ng-container *ngIf="personalRoutes.length > 0">
+    <div mat-subheader>Personal</div>
+    <a
+      *ngFor="let route of personalRoutes"
+      mat-list-item
+      [routerLink]="'/settings/' + route.path"
+      routerLinkActive="active"
+    >
+      <mat-icon fontSet="material-icons-outlined" matListItemIcon>
+        {{ route.data?.page?.icon }}
+      </mat-icon>
+      <span matListItemTitle>{{ route.data?.page?.title }}</span>
+    </a>
+  </ng-container>
+
+  <mat-divider *ngIf="systemRoutes.length > 0 && personalRoutes.length > 0">
+  </mat-divider>
+
+  <ng-container *ngIf="systemRoutes.length > 0">
+    <div mat-subheader>System</div>
+    <a
+      *ngFor="let route of systemRoutes"
+      mat-list-item
+      [routerLink]="'/settings/' + route.path"
+      routerLinkActive="active"
+    >
+      <mat-icon fontSet="material-icons-outlined" matListItemIcon>
+        {{ route.data?.page?.icon }}
+      </mat-icon>
+      <span matListItemTitle>{{ route.data?.page?.title }}</span>
+    </a>
+  </ng-container>
+</mat-nav-list>

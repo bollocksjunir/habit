@@ -1,0 +1,30 @@
+{
+  "name": "picsur-shared",
+  "version": "0.5.7",
+  "description": "Shared libraries for Picsur",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/caramelfur/Picsur",
+  "author": "Caramel <picsur@caramelfur.dev>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./dist/*": "./dist/*.js"
+  },
+  "dependencies": {
+    "ms": "2.1.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/ms": "^0.7.34",
+    "@types/node": "^22.8.4",
+    "typescript": "~5.5.4"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "start": "pnpm clean && tsc --watch",
+    "build": "pnpm clean && tsc",
+    "purge": "rm -rf ./dist && rm -rf ./node_modules"
+  }
+}

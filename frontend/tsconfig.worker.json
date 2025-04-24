@@ -1,0 +1,12 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/worker",
+    "lib": ["ES2022", "webworker"],
+
+    "isolatedModules": false
+  },
+  "include": ["src/app/workers/*.worker.ts"],
+  "exclude": ["src/**/*.exclude.ts"]
+}

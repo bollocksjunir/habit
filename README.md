@@ -1,12 +1,8 @@
-<img align="left" width="100" height="100" style="border-radius: 15%" src="branding/logo/picsur.svg"/>
 
-<a  href="https://discord.gg/GPZNwV3VKE">
-<img align="right" style="margin: 5px" src="https://img.shields.io/discord/986634827337965638?color=454FBF&label=Chat%20on%20Discord"/>
-</a>
 
-# Picsur
+# habit
 
-> Totally not an Imgur clone
+> habit not an Imgur clone
 
 I couldn't really find any open source project that allowed you to easily host images. So I decided to create one.
 

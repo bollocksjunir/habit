@@ -111,10 +111,10 @@ export async function createUser(chatId, username) {
 //     }
 // }
 
-export async function getUserPositions(chatId) {
-    const user = await getUser(chatId);
-    return user ? user.positions || {} : {};
-}
+// export async function getUserPositions(chatId) {
+//     const user = await getUser(chatId);
+//     return user ? user.positions || {} : {};
+// }
 
 export async function getTokenStats(address) {
     return await tokens_collection.findOne({ address });

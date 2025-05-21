@@ -123,48 +123,5 @@ export async function getTokenPrice(address){
     const token = await tokens_collection.findOne({ address });
     return token ? token.last_price : 0;
 }
-// export async function updateUserBalanceAndPosition(
-//     chatId,
-//     newBalance,
-//     address,
-//     positionData = null,
-//     currentBalance = null
-// ) {
-//     try {
-//         const updateQuery = { chat_id: chatId };
-//         if (currentBalance !== null) {
-//             updateQuery.balance = currentBalance;
-//         }
 
-//         let result;
-//         if (positionData === null) {
-//             // Close position
-//             result = await users_collection.updateOne(
-//                 updateQuery,
-//                 {
-//                     $set: { balance: newBalance },
-//                     $unset: { [`positions.${address}`]: "" }
-//                 }
-//             );
-//         } else {
-//             // Open/Update position
-//             result = await users_collection.updateOne(
-//                 updateQuery,
-//                 {
-//                     $set: {
-//                         balance: newBalance,
-//                         [`positions.${address}`]: {
-//                             ...positionData,
-//                             last_updated: new Date()
-//                         }
-//                     }
-//                 }
-//             );
-//         }
-//         return Boolean(result.modifiedCount);
-//     } catch (e) {
-//         console.error(`Error updating user balance and position: ${e}`);
-//         return false;
-//     }
-// }
 

@@ -161,20 +161,7 @@ const sellToken = async (token, chat_id) => {
   const buyTime = new Date(buyTrade.time).getTime();
   const timeElapsed = (Date.now() - buyTime) / 1000;
 
-  // Smart selling logic
-  const sellAndNotify = async (amount, timeDescription) => {
-    const txid = await token_sell(token.address, amount, token.uiAmount, token.decimals);
-    if (txid) {
-      try {
-        const message = `${pnl.pnl_percentage > 0 ? "🟢" : "🔴"} Selling ${amount}% ${token.symbol} at ${pnl.pnl_percentage.toFixed(
-          2
-        )}% | profit ${pnl.pnl_amount.toFixed(3)} $ (${timeDescription})\n🔗 <a href="https://solscan.io/tx/${txid}">Transaction</a>`;
-        await bot.sendMessage(chat_id, message, { parse_mode: "HTML" });
-      } catch (telegramError) {
-        console.error("Failed to send Telegram notification:", telegramError);
-      }
-    }
-  };
+  
 
   
 };

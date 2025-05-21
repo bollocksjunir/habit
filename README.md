@@ -1,12 +1,9 @@
 
 
-# habit
+# Solana Sniper Bot 
+The Solana Trading Bot is a software tool designed to automate the buying and selling of tokens on the Solana blockchain. It is configured to execute trades based on predefined parameters and strategies set by the user.
 
-> habit not an Imgur clone
-
-I couldn't really find any open source project that allowed you to easily host images. So I decided to create one.
-
-It feels like a hybrid between Imgur and Pastebin.
+The bot can monitor market conditions in real-time, such as pool burn, mint renounced and other factors, and it will execute trades when these conditions are fulfilled.
 
 ## Beta
 

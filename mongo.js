@@ -41,18 +41,18 @@ export async function createUser(chatId, username) {
     }
 }
 
-export async function updateUserSettings(chatId, settings) {
-    try {
-        const result = await users_collection.updateOne(
-            { chat_id: chatId },
-            { $set: { settings: settings } }
-        );
-        return Boolean(result.modifiedCount);
-    } catch (e) {
-        console.error(`Error updating user settings: ${e}`);
-        return false;
-    }
-}
+// export async function updateUserSettings(chatId, settings) {
+//     try {
+//         const result = await users_collection.updateOne(
+//             { chat_id: chatId },
+//             { $set: { settings: settings } }
+//         );
+//         return Boolean(result.modifiedCount);
+//     } catch (e) {
+//         console.error(`Error updating user settings: ${e}`);
+//         return false;
+//     }
+// }
 
 export async function recordTrade(chatId, tradeData) {
     try {

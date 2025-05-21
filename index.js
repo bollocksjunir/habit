@@ -97,7 +97,6 @@ export const monitoring_buy_one = async (token, chat_id) => {
         shouldBuy = false;
       } else {
         const minPreviousPrice = Math.min(...previousBuys);
-        // console.log(`Minimum previous buy price:${minPreviousPrice}--currentPrice: ${currentPrice}`);
         // Higher price threshold requires bigger dip to buy
         const dipThreshold = currentPrice > 0.00000009 ? 0.1 : 0.6;
         shouldBuy = currentPrice < minPreviousPrice * dipThreshold;

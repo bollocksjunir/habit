@@ -160,11 +160,9 @@ const sellToken = async (token, chat_id) => {
   }
   const buyTime = new Date(buyTrade.time).getTime();
   const timeElapsed = (Date.now() - buyTime) / 1000;
-  console.log(`💰 Checking PNL: ${pnl.pnl_percentage.toFixed(2)}% -${token.symbol} - time: ${(timeElapsed / 60).toFixed(2)}min`);
 
   // Smart selling logic
   const sellAndNotify = async (amount, timeDescription) => {
-    console.log(`🎯 Selling at ${pnl.pnl_percentage.toFixed(2)}%- ${amount.toFixed(2)}%-profit (${timeDescription})`);
     const txid = await token_sell(token.address, amount, token.uiAmount, token.decimals);
     if (txid) {
       try {
@@ -178,48 +176,10 @@ const sellToken = async (token, chat_id) => {
     }
   };
 
-  // Dynamic profit-taking & stop-loss
-  if (timeElapsed > 1200 && pnl.pnl_percentage <= -50000) {
-    await sellAndNotify(100, "Emergency stop-loss");
-  } else if (timeElapsed < 100 && pnl.pnl_percentage >= 500) {
-    await sellAndNotify(90, "Small profit secured");
-  } else if (pnl.pnl_percentage >= 13000) {
-    await sellAndNotify(5, "big profit secured");
-  } else if (pnl.pnl_percentage >= 23000) {
-    await sellAndNotify(7, "Maximizing gains");
-  } else if (pnl.pnl_percentage >= 59000) {
-    await sellAndNotify(10, "Moon bag secured");
-  }
+  
 };
 
-export const monitoring_sell = async (chat_id) => {
-  // Set the flag to true when starting
-  isAutoSellRunning = true;
-  console.log(chalk.green("Auto sell monitoring started"));
-  try {
-    const message = `🚀Auto sell monitoring started🚀`;
-    await bot.sendMessage(chat_id, message);
-  } catch (telegramError) {
-    console.error("Failed to send Telegram notification:", telegramError);
-  }
 
-  while (isAutoSellRunning) {
-    try {
-      const spl_tokens = await wallet_positions_bird(PUBLIC_KEY);
-
-      // Run all sell operations concurrently
-      console.log(chalk.yellow("Monitoring Auto sell running..."));
-      await Promise.all(spl_tokens.map((token) => sellToken(token, chat_id)));
-
-      await sleep(2000); // Check every second
-    } catch (error) {
-      console.error("Error monitoring positions:", error);
-      await sleep(1000); // Wait before retrying on error
-    }
-  }
-
-  console.log(chalk.red("Auto sell monitoring loop exited"));
-};
 export const monitoring_autotrading = async (chat_id) => {
   // Set the flag to true when starting
   isAutoSellRunning = true;

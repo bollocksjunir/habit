@@ -6,6 +6,7 @@ This bot automates token sniping, buying, and selling on the **Solana blockchain
 
 > Ideal for memecoin sniping, liquidity sniping, pre-launch tracking, and stealth token buying with max priority and speed.
 
+
 ---
 
 ![solana sniper bot (pump)](https://github.com/user-attachments/assets/b146456d-1b68-49e5-b9f7-cf0f675fc77a)

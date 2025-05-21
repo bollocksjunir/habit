@@ -54,33 +54,33 @@ export async function createUser(chatId, username) {
 //     }
 // }
 
-export async function recordTrade(chatId, tradeData) {
-    try {
-        const trade = {
-            chat_id: chatId,
-            token_address: tradeData.token_address,
-            token_symbol: tradeData.token_symbol,
-            type: tradeData.type, // 'buy' or 'sell'
-            amount: tradeData.amount,
-            price: tradeData.price,
-            timestamp: new Date(),
-            tx_hash: tradeData.tx_hash
-        };
+// export async function recordTrade(chatId, tradeData) {
+//     try {
+//         const trade = {
+//             chat_id: chatId,
+//             token_address: tradeData.token_address,
+//             token_symbol: tradeData.token_symbol,
+//             type: tradeData.type, // 'buy' or 'sell'
+//             amount: tradeData.amount,
+//             price: tradeData.price,
+//             timestamp: new Date(),
+//             tx_hash: tradeData.tx_hash
+//         };
         
-        await trades_collection.insertOne(trade);
+//         await trades_collection.insertOne(trade);
         
-        // Update user's trade history
-        await users_collection.updateOne(
-            { chat_id: chatId },
-            { $push: { trade_history: trade } }
-        );
+//         // Update user's trade history
+//         await users_collection.updateOne(
+//             { chat_id: chatId },
+//             { $push: { trade_history: trade } }
+//         );
         
-        return true;
-    } catch (e) {
-        console.error(`Error recording trade: ${e}`);
-        return false;
-    }
-}
+//         return true;
+//     } catch (e) {
+//         console.error(`Error recording trade: ${e}`);
+//         return false;
+//     }
+// }
 
 export async function trackToken(tokenData) {
     try {

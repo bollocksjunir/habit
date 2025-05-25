@@ -220,6 +220,7 @@ Using this bot on mainnet carries risk. The author is **not responsible** for an
 If this bot helps you learn or profit:
 
 * ⭐⭐⭐⭐⭐ Star this repository
+* https://github.com/cryptoking-max/solana-sniper-bot
 * 🧠 Suggest features via Issues
 * 🔗 Share with other Solana developers or customers
 
